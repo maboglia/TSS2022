@@ -1,0 +1,1 @@
+memberSearchIndex = [{"p":"controller","c":"StudenteCtrl","l":"addStudente(Studente)","u":"addStudente(model.Studente)"},{"p":"controller","c":"StudenteCtrl","l":"StudenteCtrl()","u":"%3Cinit%3E()"}];updateSearchResults();
