@@ -1,0 +1,16 @@
+Dora,Koncz
+Alexis,Taveras
+Amedeo,Grasso
+Andrea,Vespa
+Aristotele,Mohamadgholisonghori
+Aurora,Esposito
+Christian,de la Fuente
+Daniele,Xing
+Daniele,Sudosi
+Fabio,Amoruso
+Gabriele,Amantea
+Giovanni,Ghione
+Giuseppe,Garone
+Matteo,Gamba
+Simone,Marengo
+Simone,Sudosi
