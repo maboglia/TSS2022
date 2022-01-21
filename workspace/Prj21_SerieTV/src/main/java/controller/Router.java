@@ -18,7 +18,17 @@ public class Router extends HttpServlet {
 
 		String msg = "Benvenuti nel sito delle Serie TV";
 
-		response.getWriter().append(msg);
+		if (request.getParameter("q") != null) {
+			msg += " Ciao " + request.getParameter("q");
+		}
+		
+		//includo header
+		request.getRequestDispatcher("header.jsp").include(request, response);
+		request.getRequestDispatcher("menu.jsp").include(request, response);
+		
+			response.getWriter().append( "<h1>" + msg  + "</h1>");
+
+		request.getRequestDispatcher("footer.jsp").include(request, response);
 	}
 
 }
