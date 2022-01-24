@@ -1,0 +1,15 @@
+
+.container {
+    margin: 0 auto;
+    padding: 2em;
+    width: 90%;
+    border-left: 1px solid #ccc;
+    border-right: 1px solid #ccc;
+}
+
+#menu {
+    height: 4em;
+    width: 100%;
+    background-color: #666666;
+}
+
