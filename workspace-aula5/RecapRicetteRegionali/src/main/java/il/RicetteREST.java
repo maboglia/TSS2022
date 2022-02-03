@@ -1,11 +1,16 @@
 package il;
 
 import java.io.IOException;
+
+import org.json.JSONArray;
+import org.json.JSONObject;
+
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import model.Ricetta;
 import service.RicetteService;
 import service.RicetteServiceImpl;
 
@@ -30,7 +35,15 @@ public class RicetteREST extends HttpServlet {
 
 		response.setContentType("application/json");
 		
-		response.getWriter().append(service.getAll().toString());
+		JSONArray array = new JSONArray();
+		
+		for (Ricetta r : service.getAll()) {
+			JSONObject obj = new JSONObject();
+			obj.put("nomePiatto", r.getNome());
+			array.put(obj);
+		}
+		
+		response.getWriter().append(array.toString());
 	}
 
 	/**
