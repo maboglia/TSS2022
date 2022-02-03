@@ -40,9 +40,9 @@ public class Ricetta {
 		builder.append("{\"id\":");
 		builder.append(id);
 		builder.append(", \"nome\":");
-		builder.append(nome);
+		builder.append("\"" + nome +"\"");
 		builder.append(", \"regione\":");
-		builder.append(regione);
+		builder.append("\"" +regione+"\"");
 		builder.append("}");
 		return builder.toString();
 	}

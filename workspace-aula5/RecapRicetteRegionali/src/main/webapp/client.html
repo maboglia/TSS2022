@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Client ricette</title>
+</head>
+<body>
+    <h1>Client ricette</h1>
+    
+    <button onclick="caricaRicette()">Lista Ricette</button>
+    <button id="btnTabella">Tabella Ricette</button>
+
+
+<script>
+
+    const URL = "http://localhost:8080/RecapRicetteRegionali/api/ricette";
+    const btnTab = document.getElementById('btnTabella');
+
+    function caricaRicette() {
+
+        const lista = document.createElement('ul');
+
+        fetch(URL).then(ricette => ricette.json()).then(rJson => {
+            for(let ricetta of rJson){
+                console.log(ricetta);
+                let LI = document.createElement('li');
+                LI.textContent = ricetta.nome;
+                lista.appendChild(LI);
+            }
+
+            document.body.appendChild(lista);
+        })
+
+    }
+
+
+    btnTab.onclick = function () {
+        const tabella = document.createElement('table');
+        fetch(URL).then(ricette => ricette.json()).then(rJson => {
+            for(let ricetta of rJson){
+                const riga = document.createElement('tr');
+                const td = document.createElement('td');
+                td.textContent = ricetta.nome;
+                riga.appendChild(td);
+                tabella.appendChild(riga);
+            }
+            
+            document.body.appendChild(tabella);
+        })
+
+        
+    }
+
+</script>
+
+
+</body>
+</html>
