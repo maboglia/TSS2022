@@ -7,7 +7,7 @@ import java.util.Scanner;
 public class ProcessaFile {
 
 	public static void main(String[] args) throws FileNotFoundException {
-		File f = new File("files/primipiatti.txt");
+		File f = new File("files/secondipiatti.txt");
 		
 		Scanner sc = new Scanner(f);
 		

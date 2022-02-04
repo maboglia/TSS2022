@@ -1,6 +1,6 @@
 package model;
 
-public class Ricetta {
+public class Ricetta implements Comparable<Ricetta> {
 
 	private static int counter= 1;
 	
@@ -52,6 +52,12 @@ public class Ricetta {
 		builder.append("\"" +regione+"\"");
 		builder.append("}");
 		return builder.toString();
+	}
+
+	@Override
+	public int compareTo(Ricetta altraRicetta) {
+		// TODO Auto-generated method stub
+		return this.nome.compareTo(altraRicetta.nome);
 	}
 	
 	

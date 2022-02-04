@@ -1,6 +1,8 @@
 package il;
 
 import java.io.IOException;
+import java.util.List;
+import java.util.stream.Collectors;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -36,12 +38,32 @@ public class RicetteREST extends HttpServlet {
 		response.setContentType("application/json");
 		
 		JSONArray array = new JSONArray();
+
+		if (request.getParameter("ingrediente")!=null) {
+			String ingr = request.getParameter("ingrediente");
+			List<Ricetta> ricetteFiltrate = service.getAll()
+							.stream()
+							.filter(r -> r.getNome().contains(ingr))
+							.sorted()
+							.collect(Collectors.toList());
+			
+			for (Ricetta r : ricetteFiltrate) {
+				JSONObject obj = new JSONObject();
+				obj.put("piatto",r.getNome());
+				array.put(obj);
+			}
+			
+		} else {
+			for (Ricetta r : service.getAll()) {
+				JSONObject obj = new JSONObject();
+				obj.put("piatto",r.getNome());
+				array.put(obj);
+			}
+			
+			
+		}		
 		
-		for (Ricetta r : service.getAll()) {
-			JSONObject obj = new JSONObject();
-			obj.put("nomePiatto", r.getNome());
-			array.put(obj);
-		}
+		
 		
 		response.getWriter().append(array.toString());
 	}
