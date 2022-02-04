@@ -14,6 +14,13 @@ public class Ricetta {
 		this.regione = regione;
 	}
 
+	public Ricetta(String nome) {
+		this.id = counter++;
+		this.nome = nome;
+		this.regione = "imprecisata";
+		
+	}
+	
 	public String getNome() {
 		return nome;
 	}

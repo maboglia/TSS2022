@@ -1,11 +1,15 @@
 package presentation;
 
 import java.io.IOException;
+import java.util.List;
+import java.util.stream.Collectors;
+
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import model.Ricetta;
 import service.RicetteService;
 import service.RicetteServiceImpl;
 
@@ -28,7 +32,21 @@ public class RicetteMVC extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-		request.setAttribute("ricette", service.getAll());
+		
+		if (request.getParameter("ingrediente")!=null) {
+			String ingr = request.getParameter("ingrediente");
+			List<Ricetta> ricetteFiltrate = service.getAll()
+							.stream()
+							.filter(r -> r.getNome().contains(ingr))
+							.collect(Collectors.toList());
+			
+			request.setAttribute("ricette", ricetteFiltrate);
+			
+		} else {
+			request.setAttribute("ricette", service.getAll());
+			
+		}
+		
 		
 		request.getRequestDispatcher("vistaMVC.jsp").forward(request, response);
 	}
