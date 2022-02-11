@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<ul id="lista"></ul>
+
+
+            <script>
+
+                const URL = "http://localhost:8080/Prj29_CanzoniWebDB/api/canzoni";
+                const LISTA = document.getElementById('lista');
+
+                fetch(URL).then(e => e.json()).then(j => {
+
+                    for (const canzone of j) {
+                        const LI = document.createElement(('li'));
+                        LI.textContent = canzone.titolo;
+                        LISTA.appendChild(LI);
+                    }
+
+
+
+                });
+
+
+
+            </script>
+</body>
+</html>

@@ -18,6 +18,9 @@ public abstract class CapoAbbigliamento {
 		return codArt;
 	}
 	
+	public String getDescrizione() {
+		return descrizione;
+	}
 	
 	@Override
 	public String toString() {
