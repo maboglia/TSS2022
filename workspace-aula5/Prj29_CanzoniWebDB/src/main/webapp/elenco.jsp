@@ -1,12 +1,12 @@
 <%@page import="model.Canzone"%>
 <%@page import="java.util.List"%>
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=utf-8"
+    pageEncoding="utf-8"%>
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<meta charset="utf-8">
+<title>Hit List Italia</title>
 </head>
 <body>
 
@@ -17,6 +17,7 @@
 	<tr>
 		<th>Titolo</th>
 		<th>Cantante</th>
+		<th>Anno</th>
 	</tr>
 
 <% List<Canzone> canzoni = (List<Canzone>) request.getAttribute("listaCanzoni"); %>
@@ -25,6 +26,7 @@
 	<tr>
 		<td><a href="https://www.google.com/search?q=<%= c.getTitolo() %>"><%= c.getTitolo() %></a></td>
 		<td><a href="https://www.google.com/search?q=<%= c.getCantante() %>"><%= c.getCantante() %></a></td>
+		<td><%= c.getAnno() %></td>
 	</tr>
 <% } %>
 

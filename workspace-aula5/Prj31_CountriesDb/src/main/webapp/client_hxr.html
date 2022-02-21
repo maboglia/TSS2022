@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+
+<form method="post" action="countries">
+	<input id="nome" name="stato" type="text" placeholder="Nome stato">
+	<input id="capitale" name="capitale" type="text" placeholder="Nome capitale">
+	<input id="bandiera" name="bandiera" type="text" placeholder="URL bandiera">
+	<input id="popolazione" name="popolazione" type="text" placeholder="Numero popolazione">
+	<input type="submit" value="add">
+
+</form>
+
+	<ul id="fattiPrincipali"></ul>
+
+
+
+<script>
+
+    const INPUT = document.getElementById('nomeStato');
+    var PAESE = "Italy";
+    const URL = "https://restcountries.com/v3.1/name/";
+    const URL_EUROPE = "https://restcountries.com/v3.1/region/europe";
+
+    const xhr = new XMLHttpRequest();
+
+    const NOME = document.getElementById('nome');
+    const CAPITALE = document.getElementById('capitale');
+    const BANDIERA = document.getElementById('bandiera');
+    const POP = document.getElementById('popolazione');
+    
+    const FATTI = document.getElementById('fattiPrincipali');
+
+
+    
+
+function trova_paese(paese)  {
+        xhr.open('GET', URL + paese);
+
+xhr.onreadystatechange = (e => {
+    // console.log(e.target);
+    // console.log(e.target.readyState);
+    // console.log(e.target.status);
+
+    if (e.target.readyState == 4 && e.target.status == 200){
+
+        console.log("abbiamo l'oggetto");
+        // console.log(e.target.response);
+        let collezione_stati = JSON.parse(e.target.response);
+        let stato = collezione_stati[0];
+        console.log(stato);
+
+        NOME.value = stato.name.common;
+        CAPITALE.value = stato.capital;
+        BANDIERA.value = stato.flags.png;
+        POP.value = stato.population;
+
+       
+
+
+
+    }
+
+
+});
+
+xhr.send();
+
+
+
+    }
+
+
+
+
+
+    xhr.open('GET', URL_EUROPE);
+
+    xhr.onreadystatechange = (e => {
+        // console.log(e.target);
+        // console.log(e.target.readyState);
+        // console.log(e.target.status);
+
+        if (e.target.readyState == 4 && e.target.status == 200){
+
+            console.log("abbiamo l'oggetto");
+            // console.log(e.target.response);
+            let collezione_stati = JSON.parse(e.target.response);
+            
+            for (const state of collezione_stati) {
+
+                const LINK = document.createElement('a');
+                LINK.setAttribute('onclick', "trova_paese('"+state.name.common+"')");
+                LINK.setAttribute('href', '#');
+                LINK.textContent = state.name.common;
+                console.log(LINK);
+                const LI = document.createElement('li');
+                LI.appendChild(LINK);
+                FATTI.appendChild(LI);
+                console.log(state.name.common);
+                
+
+            }
+
+
+        }
+
+
+    });
+
+    xhr.send();
+
+
+
+
+
+
+</script>
+
+
+
+</body>
+</html>

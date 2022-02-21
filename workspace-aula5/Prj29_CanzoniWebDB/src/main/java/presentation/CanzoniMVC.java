@@ -1,6 +1,7 @@
 package presentation;
 
 import java.io.IOException;
+import java.util.stream.Collectors;
 
 import controller.CanzoniCtrl;
 import jakarta.servlet.ServletException;
@@ -30,7 +31,7 @@ public class CanzoniMVC extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-		request.setAttribute("listaCanzoni", this.ctrl.getCantanti());
+		request.setAttribute("listaCanzoni", this.ctrl.getCantanti().stream().sorted().collect(Collectors.toList()));
 		request.getRequestDispatcher("elenco.jsp").forward(request, response);
 		
 	}
