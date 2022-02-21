@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+
+
+
+
+
+    <script>
+
+        const URL = "https://private-anon-76545696b8-carsapi1.apiary-mock.com/manufacturers";
+
+        fetch(URL).then(e => e.json()).then(e =>{
+
+            for (const auto of e) {
+                
+                let autoObj = {
+                 marca : auto.name,
+                 modello : auto.img_url,
+                 prezzo : auto.avg_price,
+                 anno : 2022,
+                 km :  (Math.random() * 10000)
+
+                };
+
+
+                fetch("http://localhost:9001/api/auto", {
+                    method: "post", 
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(autoObj)
+                }).then(e => console.log(e));
+
+
+                console.log(autoObj);
+            }
+
+
+
+        });
+
+
+
+    </script>
+
+</body>
+</html>
