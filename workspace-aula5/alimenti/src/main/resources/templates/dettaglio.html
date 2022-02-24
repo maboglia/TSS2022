@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+<meta charset="utf-8">
+<title th:text="${titolo}">Insert title here</title>
+</head>
+<body>
+
+	<h1 th:text="${titolo}"></h1>
+
+	<h2 th:text="${alimento.categoria}"></h2>
+	<h2 th:text="${alimento.prodotto}"></h2>
+	<h2 th:text="${alimento.proteine + ' ' + alimento.lipidi + ' ' + alimento.carboidrati + ' ' }"></h2>
+
+
+</body>
+</html>
