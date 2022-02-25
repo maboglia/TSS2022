@@ -1,6 +1,7 @@
 package com.boglia.services;
 
 import java.util.List;
+import java.util.Map;
 
 import com.boglia.entities.Alimento;
 
@@ -15,5 +16,7 @@ public interface AlimentiService {
 	List<Alimento> getAlimentiByCategoria(String categoria);
 	List<Alimento> getAlimentiByEnergia(int min, int max);
 	
+	List<String> getCategorie();
 	
+	Map<Integer, Alimento> getAlimentiMap();
 }

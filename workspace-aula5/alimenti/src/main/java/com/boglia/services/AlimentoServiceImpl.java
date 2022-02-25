@@ -1,6 +1,8 @@
 package com.boglia.services;
 
 import java.util.List;
+import java.util.Map;
+import java.util.TreeMap;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -13,6 +15,21 @@ public class AlimentoServiceImpl implements AlimentiService {
 
 	@Autowired
 	private AlimentoDAO repo;
+	
+	private Map<Integer, Alimento> alimentiMap;
+	
+	public Map<Integer, Alimento> getAlimentiMap() {
+		
+		if (alimentiMap==null) {
+			alimentiMap = new TreeMap<>();
+			for(Alimento a : getAlimenti()) {
+				alimentiMap.put(a.getId(), a);
+			}
+		}
+		
+		return alimentiMap;
+	}
+	
 	
 	@Override
 	public void addAlimento(Alimento a) {
@@ -47,13 +64,19 @@ public class AlimentoServiceImpl implements AlimentiService {
 	@Override
 	public List<Alimento> getAlimentiByCategoria(String categoria) {
 		// TODO Auto-generated method stub
-		return null;
+		return this.repo.findByCategoriaStartingWith(categoria);
 	}
 
 	@Override
 	public List<Alimento> getAlimentiByEnergia(int min, int max) {
 		// TODO Auto-generated method stub
-		return null;
+		return this.repo.findByEnergiaBetweenOrderByEnergiaDesc(min, max);
+	}
+
+	@Override
+	public List<String> getCategorie() {
+		// TODO Auto-generated method stub
+		return this.repo.trovaCategorie();
 	}
 
 }

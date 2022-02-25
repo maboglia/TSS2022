@@ -2,6 +2,8 @@ package com.boglia.presentation;
 
 import java.util.List;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -27,8 +29,9 @@ public class AlimentiCtrl {
 	private AlimentiService service;
 	
 	@GetMapping
-	public String getAll(Model m){
+	public String getAll(Model m, HttpSession session){
 		
+		session.setAttribute("ruolo", "admin");
 		m.addAttribute("lista", this.service.getAlimenti());
 		m.addAttribute("titolo", "elenco alimenti");
 		
