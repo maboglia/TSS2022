@@ -12,6 +12,7 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -26,17 +27,18 @@ public class Studente {
 	private int eta;
 	private double media;
 	
-	@ManyToMany(fetch = FetchType.LAZY, cascade = CascadeType.PERSIST)
-	@JoinTable(name = "studenti_esami",
-	
-			joinColumns = {
-					@JoinColumn(name="studente_id", referencedColumnName = "id", nullable = false, updatable = false)
-			}, 
-			inverseJoinColumns = {
-					@JoinColumn(name="esame_id", referencedColumnName = "id", nullable = false, updatable = false)
-			}
-			)
-	private Set<Esame> esami = new HashSet<>();
+//	@ManyToMany(fetch = FetchType.LAZY, cascade = CascadeType.PERSIST)
+//	@JoinTable(name = "studenti_esami",
+//	
+//			joinColumns = {
+//					@JoinColumn(name="studente_id", referencedColumnName = "id", nullable = false, updatable = false)
+//			}, 
+//			inverseJoinColumns = {
+//					@JoinColumn(name="esame_id", referencedColumnName = "id", nullable = false, updatable = false)
+//			}
+//			)
+	@OneToMany(mappedBy = "studente")
+	private Set<StudentiEsami> esami = new HashSet<>();
 
 	public Studente() {
 	}
@@ -92,12 +94,6 @@ public class Studente {
 		this.media = media;
 	}
 
-	public Set<Esame> getEsami() {
-		return esami;
-	}
 
-	public void setEsami(Set<Esame> esami) {
-		this.esami = esami;
-	}
 	
 }

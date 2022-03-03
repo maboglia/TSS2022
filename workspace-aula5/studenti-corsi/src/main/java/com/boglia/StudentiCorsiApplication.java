@@ -1,5 +1,6 @@
 package com.boglia;
 
+import java.time.LocalDateTime;
 import java.util.Arrays;
 import java.util.Collection;
 
@@ -10,6 +11,7 @@ import org.springframework.context.annotation.Bean;
 
 import com.boglia.dal.EsameDAO;
 import com.boglia.dal.StudenteDAO;
+import com.boglia.dal.StudentiEsamiDAO;
 import com.boglia.entities.Esame;
 import com.boglia.entities.Studente;
 import com.boglia.entities.StudentiEsami;
@@ -22,7 +24,7 @@ public class StudentiCorsiApplication {
 	}
 
 	@Bean
-	public CommandLineRunner demo(StudenteDAO sd, EsameDAO ed) {
+	public CommandLineRunner demo(StudenteDAO sd, EsameDAO ed, StudentiEsamiDAO sed) {
 		return args -> {
 			Studente s1 = new Studente("pippo", 20);
 			Studente s2 = new Studente("pluto", 21);
@@ -39,13 +41,15 @@ public class StudentiCorsiApplication {
 			Collection<Esame> esami = Arrays.asList(e1,e2, e3, e4);
 			ed.saveAll(esami);
 
-			/*
+			
 			StudentiEsami se = new StudentiEsami();
 			se.setStudente(s1);
 			se.setEsame(e1);
 			se.setVoto(25);
-			*/
+			se.setDataEsame(LocalDateTime.now());
+			sed.save(se);
 			
+			/*
 			s1.getEsami().add(e1);
 			s1.getEsami().add(e2);
 			s1.getEsami().add(e4);
@@ -58,7 +62,7 @@ public class StudentiCorsiApplication {
 			s3.getEsami().add(e3);
 			
 			s4.getEsami().add(e4);
-			sd.save(s1);sd.save(s2);sd.save(s3);sd.save(s4);
+			sd.save(s1);sd.save(s2);sd.save(s3);sd.save(s4);*/
 		};
 		
 	}
