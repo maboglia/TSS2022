@@ -9,6 +9,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -23,8 +24,9 @@ public class Esame {
 	private String sigla;
 	private int crediti;
 	
-	@ManyToMany(mappedBy = "esami", fetch = FetchType.LAZY)
-	private Set<Studente> studenti = new HashSet<>();
+//	@ManyToMany(mappedBy = "esami", fetch = FetchType.LAZY)
+	@OneToMany(mappedBy = "esame")
+	private Set<StudentiEsami> studenti = new HashSet<>();
 	
 	public Esame() {
 		// TODO Auto-generated constructor stub
@@ -70,11 +72,11 @@ public class Esame {
 
 
 
-	public Set<Studente> getStudenti() {
+	public Set<StudentiEsami> getStudenti() {
 		return studenti;
 	}
 
-	public void setStudenti(Set<Studente> studenti) {
+	public void setStudenti(Set<StudentiEsami> studenti) {
 		this.studenti = studenti;
 	}
 	

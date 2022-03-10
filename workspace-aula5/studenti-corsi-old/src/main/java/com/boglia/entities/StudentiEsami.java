@@ -1,5 +1,6 @@
 package com.boglia.entities;
 
+import java.io.Serializable;
 import java.time.LocalDateTime;
 
 import javax.persistence.Entity;
@@ -9,32 +10,24 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 
-//@Entity
-public class StudentiEsami {
+@Entity
+public class StudentiEsami implements Serializable {
 
-	//@Id
-	//@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id; 
 	
-	//@ManyToOne
-	//@JoinColumn(name = "studente_id")
+	@ManyToOne
+	@JoinColumn(name = "studente_id")
 	private Studente studente;
 	
-	//@ManyToOne
-	//@JoinColumn(name = "esame_id")
+	@ManyToOne
+	@JoinColumn(name = "esame_id")
 	private Esame esame;
 	
 	private LocalDateTime dataEsame;
 	
 	private int voto;
-
-	public Integer getId() {
-		return id;
-	}
-
-	public void setId(Integer id) {
-		this.id = id;
-	}
 
 	public Studente getStudente() {
 		return studente;
