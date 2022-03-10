@@ -1,0 +1,16 @@
+<div th:replace="header"><h1>...</h1></div>
+
+	<h1 th:text = "${titolo}"></h1>
+	<form action="addvoto" method="POST">
+	
+	    <select name="studente" id="studente"></select>
+	    <select name="esame" id="esame"></select>
+	    <input type="number" name="voto" id="voto">
+	    <input type="text" name="dataEsame" id="date">
+	    <input type="hidden" name="id">
+	    <input type="submit" value="Aggiungi">
+	
+	</form>
+	
+	<script src="js/script.js"></script>
+<div th:replace="footer"><h1>...</h1></div>

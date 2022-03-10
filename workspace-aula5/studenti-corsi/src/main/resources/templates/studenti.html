@@ -1,0 +1,22 @@
+<div th:replace="header"><h1>...</h1></div>
+
+<h1 th:text="${titolo}"></h1>
+<table class="table">
+	<tr>
+		<th>Nome</th>
+		<th>Et&agrave;</th>
+		<th>Media</th>
+	</tr>
+	<tr th:each="studente:${studenti}">
+		<td><a href="#" th:href="@{'/studenti/' + ${studente.id}}" th:text="${studente.nome}"></a></td>
+		<td th:text="${studente.eta}">Row 1: Col 2</td>
+		<td th:text="${studente.media}">Row 1: Col 2</td>
+	</tr>
+</table>
+
+
+
+<script type="text/javascript">
+
+</script>
+<div th:replace="footer"><h1>...</h1></div>

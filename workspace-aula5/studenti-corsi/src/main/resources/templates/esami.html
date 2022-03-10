@@ -1,0 +1,16 @@
+<div th:replace="header"><h1>...</h1></div>
+
+		<h1 th:text = "${titolo}"></h1>
+	<table class = "table">
+	  <tr>
+	    <th>Nome</th>
+	    <th>Crediti</th>
+	  </tr>
+	  <tr th:each = "esame:${esami}">
+	    <td th:text = "${esame.nome}">Row 1: Col 1</td>
+	    <td th:text = "${esame.crediti}">Row 1: Col 2</td>
+	  </tr>
+	</table>
+
+
+<div th:replace="footer"><h1>...</h1></div>

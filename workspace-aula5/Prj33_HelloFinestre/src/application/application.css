@@ -1,0 +1,11 @@
+/* JavaFX CSS - Leave this comment until you have at least create one rule which uses -fx-Property */
+
+.button {-fx-background-color: red;}
+.box {-fx-grid-lines-visible: true; -fx-hgap: 10}
+
+.window {-fx-background-color: blue;}
+
+
+
+
+

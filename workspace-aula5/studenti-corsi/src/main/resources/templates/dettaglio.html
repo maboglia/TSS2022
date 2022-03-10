@@ -1,0 +1,34 @@
+<div th:replace="header"><h1>...</h1></div>
+
+<h1 th:text="${titolo}"></h1>
+
+<div class="card" style="width: 18rem;">
+  <img src="..." class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title" th:text = "${studente.nome}">Card title</h5>
+    <p class="card-text" th:text = "${studente.eta}">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    <a href="#" class="btn btn-primary">Go somewhere</a>
+  </div>
+</div>
+
+<table class="table">
+	<tr>
+		<th>Nome</th>
+		<th>Crediti</th>
+		<th>Voto</th>
+		<th>Data</th>
+	</tr>
+	<tr th:each="esame:${esami}">
+		<td th:text="${esame.esame.nome}">Row 1: Col 1</td>
+		<td th:text="${esame.esame.crediti}">Row 1: Col 2</td>
+		<td th:text="${esame.voto}">Row 1: Col 2</td>
+		<td th:text="${esame.dataEsame}">Row 1: Col 2</td>
+	</tr>
+</table>
+
+
+
+<script type="text/javascript">
+
+</script>
+<div th:replace="footer"><h1>...</h1></div>
