@@ -1,0 +1,24 @@
+2022-03-14) 2) paperino
+veicoli noleggiati: 1 id: 58
+tipo: BARCA
+anno: 2012
+prezzo vendita: 60733.04906589625
+costo noleggio giornaliero: 303.66524532948125
+VeicoloTargato{targa='BA58'patente: A}Veicolo disponibile per il noleggio
+---------------------------------------
+2022-03-14) 4) giovanni
+veicoli noleggiati: 2 id: 47
+tipo: CAMION
+anno: 2012
+prezzo vendita: 153197.60951742862
+costo noleggio giornaliero: 510.65869839142874
+VeicoloTargato{targa='CA47'patente: D}
+---------------------------------------
+2022-03-14) 4) giovanni
+veicoli noleggiati: 2 id: 1
+tipo: AUTO
+anno: 2015
+prezzo vendita: 10916.160373647279
+costo noleggio giornaliero: 21.832320747294556
+VeicoloTargato{targa='AU1'patente: B}
+---------------------------------------
