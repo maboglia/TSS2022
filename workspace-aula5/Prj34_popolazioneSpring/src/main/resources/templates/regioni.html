@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+<meta charset="utf-8">
+<title th:text="regioni">Insert title here</title>
+</head>
+<body>
+
+	<h1 th:text="regioni"></h1>
+
+	<select name="regione" onchange="trovaComuni()" id="regione">
+		<option th:each="r : ${regioni}" th:text="${r}"></option>
+	</select>
+
+	<select th:if="${comuni} != null"  name="comune" onchange="trovaDati()" id="comune">
+		<option th:each="c : ${comuni}" th:text="${c.comune}"></option>
+	</select>
+
+	<div  th:if="${provincia} != null">
+		<h2 th:text="${provincia.comune}"></h2>
+		<h2 th:text="${provincia.maschi}"></h2>
+		<h2 th:text="${provincia.femmine}"></h2>
+		<h2 th:text="${provincia.totale}"></h2>
+	</div>
+
+
+
+<script type="text/javascript">
+
+	const regioni = document.getElementById("regione");
+	const comuni = document.getElementById("comune");
+
+	function trovaComuni(){
+		location.href = "/popolazione/regioni/" + regioni.value;
+	}
+
+	function trovaDati(){
+		location.href = "/popolazione/regioni/comune/" + comuni.value;
+	}
+</script>
+
+
+</body>
+</html>
