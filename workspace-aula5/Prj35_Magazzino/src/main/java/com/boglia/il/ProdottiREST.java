@@ -2,8 +2,6 @@ package com.boglia.il;
 
 import java.util.List;
 
-import javax.servlet.http.HttpSession;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -23,9 +21,8 @@ public class ProdottiREST {
 	private ProdottoService service;
 	
 	@GetMapping("prodotti")
-	public List<Prodotto> getAll(HttpSession session){
+	public List<Prodotto> getAll(){
 		System.out.println("GET--------------------");
-		session.setAttribute("user", "pippo");
 		return service.getProdotti();
 	}
 	

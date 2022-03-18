@@ -12,8 +12,14 @@
 <body>
 
 <h1>Client Prodotti</h1>
+
 <div class="container">
-    
+    <input type="text" name="titolo" id="titolo" placeholder="titolo">
+    <input type="text" name="quantita" id="quantita" placeholder="quantita">
+    <button onclick="addProdotto()">Aggiungi</button>
+</div>
+<div class="container">
+
     <div id="sx"></div>
     
     <div id="dx"></div>
@@ -50,6 +56,26 @@
             method: 'DELETE'
         }).then(() => caricatore()).catch(e => console.log(e))
         
+    }
+
+    function addProdotto() { 
+        let titolo = document.getElementById('titolo').value;
+        let quantita = document.getElementById('quantita').value;
+
+        let obj = {
+            "titolo": titolo,
+            "quantita": parseInt(quantita)
+        }
+
+        fetch(URL, {
+        	method: 'post',
+        	headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(obj)
+        }).then((e) => console.log('tutto ok', e))
+
     }
 
     document.body.onload = caricatore
