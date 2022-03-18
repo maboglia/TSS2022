@@ -32,7 +32,9 @@ public class ProdottoServiceImpl implements ProdottoService {
 
 	@Override
 	public Prodotto getProdottoById(int id) {
-		return repo.getById(id);
+		if (repo.findById(id).isPresent())
+			return repo.findById(id).get();
+		return null;
 	}
 
 	@Override

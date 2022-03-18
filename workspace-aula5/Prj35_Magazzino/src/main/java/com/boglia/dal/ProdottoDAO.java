@@ -12,9 +12,10 @@ import com.boglia.entities.Prodotto;
 @Repository
 public interface ProdottoDAO extends JpaRepository<Prodotto, Integer> {
 
+//	@Query(value = "from Prodotto where quantita between :min and :max")//JPQL
 	@Query(value = "select * from products where quantita between :min and :max", nativeQuery = true)
 	List<Prodotto> trovaProdotti(@Param("min") int min, @Param("max") int max );
 	
-	List<Prodotto> findByQuantitaBetween(int min, int max);
+	List<Prodotto> findByQuantitaBetween(int min, int max);//derived query JPA
 	
 }
