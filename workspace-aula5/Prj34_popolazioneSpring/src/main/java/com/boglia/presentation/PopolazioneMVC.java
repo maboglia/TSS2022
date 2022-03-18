@@ -34,7 +34,7 @@ public class PopolazioneMVC {
 	}
 	@GetMapping("regioni/comune/{comune}")
 	public String getDatiComune(@PathVariable String comune,  Model m) {
-		m.addAttribute("provincia", service.getProvinciaByComune(comune));
+		m.addAttribute("e", service.getProvinciaByComune(comune));
 		m.addAttribute("regioni", service.getRegioni());
 		
 		return "regioni";
