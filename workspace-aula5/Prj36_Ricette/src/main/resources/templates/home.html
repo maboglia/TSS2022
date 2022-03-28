@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" th:href="@{/resources/webjars/bootstrap/5.1.3/css/bootstrap.min.css}">
+    <title th:text="${titolo}">Document</title>
+</head>
+<body>
+    
+    <div class="container">
+        <div id="modale">
+            <div id="lista"></div>
+        </div>
+        <button id="btnAddIngrediente">Aggiungi Ingrediente</button>
+        <button id="checkout">Checkout</button>
+        <form th:action="@{'/'}" method="POST">
+            <input type="hidden" name="id" value="0">
+            <input type="text" name="nome" id="nome" placeholder="nome">
+            <textarea name="ingredienti" id="ingredienti" cols="30" rows="10"></textarea>
+            <input type="number" step="0.01" name="proteine" id="proteine" placeholder="proteine">
+            <input type="number" step="0.01" name="carboidrati" id="carboidrati" placeholder="carboidrati">
+            <input type="number" step="0.01" name="lipidi" id="lipidi" placeholder="lipidi">
+            <input type="number" name="energia" id="energia" placeholder="energia">
+            <input type="submit" value="Aggiungi">
+        </form>
+    </div>
+
+
+    <script th:src="@{/resources/webjars/bootstrap/5.1.3/js/bootstrap.min.js}"></script>
+    <script src="js/script.js" th:src="@{'js/script.js'}"></script>
+</body>
+</html>
