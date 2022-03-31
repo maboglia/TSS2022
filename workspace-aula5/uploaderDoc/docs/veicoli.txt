@@ -1,0 +1,95 @@
+auto,2015,Dodge Dart SXT FWD
+auto,2007,Scion tC Spec Auto
+auto,2005,Acura MDX AWD
+auto,2013,Subaru Impreza 2.0i Sport Limited Hatchback
+auto,2013,MINI Countryman FWD
+auto,2003,Acura CL 3.2 FWD
+auto,2004,INFINITI G35 Coupe RWD
+auto,2014,Nissan Rogue Select S AWD
+auto,2013,Mazda CX-9 Touring
+auto,1997,Jeep Wrangler SE
+auto,2012,Volkswagen Jetta GLI Autobahn FWD with Navigation
+auto,2007,BMW 5 Series 530xi Sedan AWD
+auto,2012,Hyundai Accent GS 4-Door Hatchback FWD
+auto,2017,Chevrolet Trax LS FWD
+auto,2017,Kia Soul Base
+auto,2014,MINI Countryman S ALL4 AWD
+auto,2015,Hyundai Elantra SE Sedan FWD
+auto,2014,Volkswagen Jetta SE with Connectivity and Sunroof
+auto,2011,Volkswagen Jetta Base
+bici,2011,Specialized Dart FWD
+bici,2001,Specialized tC Auto
+bici,2001,Specialized MDX
+bici,2011,Specialized Impreza.0i Sport Limited Hatchback
+bici,2011,Specialized Countryman
+bici,2001,Specialized CL.2 FWD
+bici,2001,Specialized G35 RWD
+bici,2011,Specialized Rogue S AWD
+bici,2011,Specialized CX Touring
+bici,1991,Specialized Wrangler
+bici,2011,Specialized Jetta Autobahn FWD with Navigation
+bici,2001,Specialized 5 530xi Sedan AWD
+bici,2011,Specialized Accent 4-Door Hatchback FWD
+bici,2011,Specialized Trax FWD
+bici,2011,Specialized Soul
+bici,2011,Specialized Countryman ALL4 AWD
+bici,2011,Specialized Elantra Sedan FWD
+bici,2011,Specialized Jetta with Connectivity and Sunroof
+bici,2011,Specialized Jetta
+camion,2012,Volvo Dart FWD
+camion,2002,Volvo tC Auto
+camion,2002,Volvo MDX
+camion,2012,Volvo Impreza.0i Sport Limited Hatchback
+camion,2012,Volvo Countryman
+camion,2002,Volvo CL.2 FWD
+camion,2002,Volvo G35 RWD
+camion,2012,Volvo Rogue S AWD
+camion,2012,Volvo CX Touring
+camion,1992,Volvo Wrangler
+camion,2012,Volvo Jetta Autobahn FWD with Navigation
+camion,2002,Volvo 5 530xi Sedan AWD
+camion,2012,Volvo Accent 4-Door Hatchback FWD
+camion,2012,Volvo Trax FWD
+camion,2012,Volvo Soul
+camion,2012,Volvo Countryman ALL4 AWD
+camion,2012,Volvo Elantra Sedan FWD
+camion,2012,Volvo Jetta with Connectivity and Sunroof
+camion,2012,Volvo Jetta
+barca,2012,Johnson Dart FWD
+barca,2002,Johnson tC Auto
+barca,2002,Johnson MDX
+barca,2012,Johnson Impreza.0i Sport Limited Hatchback
+barca,2012,Johnson Countryman
+barca,2002,Johnson CL.2 FWD
+barca,2002,Johnson G35 RWD
+barca,2012,Johnson Rogue S AWD
+barca,2012,Johnson CX Touring
+barca,1992,Johnson Wrangler
+barca,2012,Johnson Jetta Autobahn FWD with Navigation
+barca,2002,Johnson 5 530xi Sedan AWD
+barca,2012,Johnson Accent 4-Door Hatchback FWD
+barca,2012,Johnson Trax FWD
+barca,2012,Johnson Soul
+barca,2012,Johnson Countryman ALL4 AWD
+barca,2012,Johnson Elantra Sedan FWD
+barca,2012,Johnson Jetta with Connectivity and Sunroof
+barca,2012,Johnson Jetta
+camper,2012,SuperCamper camp_art FWD
+camper,2002,SuperCamper camp_C Auto
+camper,2002,SuperCamper camp_DX
+camper,2012,SuperCamper camp_mpreza.0i Sport Limited Hatchback
+camper,2012,SuperCamper camp_ountryman
+camper,2002,SuperCamper camp_L.2 FWD
+camper,2002,SuperCamper camp_35 RWD
+camper,2012,SuperCamper camp_ogue S AWD
+camper,2012,SuperCamper camp_X Touring
+camper,1992,SuperCamper camp_rangler
+camper,2012,SuperCamper camp_etta Autobahn FWD with Navigation
+camper,2002,SuperCamper camp_ 530xi Sedan AWD
+camper,2012,SuperCamper camp_ccent 4-Door Hatchback FWD
+camper,2012,SuperCamper camp_rax FWD
+camper,2012,SuperCamper camp_oul
+camper,2012,SuperCamper camp_ountryman ALL4 AWD
+camper,2012,SuperCamper camp_lantra Sedan FWD
+camper,2012,SuperCamper camp_etta with Connectivity and Sunroof
+camper,2012,SuperCamper camp_etta
