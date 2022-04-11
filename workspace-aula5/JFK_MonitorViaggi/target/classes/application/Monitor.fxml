@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+	
+<BorderPane xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.MonitorController">
+	<!-- TODO Add Nodes -->
+	<top>
+		      <Label text="Monitor serve agenzia viaggi" BorderPane.alignment="CENTER">
+         <BorderPane.margin>
+            <Insets bottom="10.0" />
+         </BorderPane.margin>
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Label>
+	</top>
+	<left><VBox></VBox>
+	</left>
+	<center>
+	<VBox alignment="CENTER" BorderPane.alignment="CENTER">
+         <children>
+            <HBox alignment="CENTER_LEFT" spacing="10.0">
+               <children>
+                  <Label text="Insert Text: " />
+                  <TextField fx:id="lblTesto" promptText="Insert the text here.." />
+                  <Button fx:id="btnTranslate" mnemonicParsing="false" onAction="#doTranslate" text="Translate" />
+                  <ImageView fitHeight="82.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../rsc/tss.png" />
+                     </image>
+                     <HBox.margin>
+                        <Insets left="15.0" />
+                     </HBox.margin>
+                  </ImageView>
+               </children>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <VBox.margin>
+                  <Insets bottom="15.0" />
+               </VBox.margin>
+            </HBox>
+            <TextArea fx:id="txtResult" promptText="Welcome to the AlienDictionary v2018...">
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin></TextArea>
+         </children>
+         <BorderPane.margin>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </BorderPane.margin>
+      </VBox>
+	</center>
+	<bottom></bottom>
+</BorderPane>

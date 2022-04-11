@@ -39,7 +39,7 @@ public class StorageController {
 
 	
 	@GetMapping("/images/{filename:.+}")
-	@Response
+	@ResponseBody
 	public ResponseEntity<Resource> showFile(@PathVariable String filename){
 		Resource file = service.loadAsResource(filename);
 		
